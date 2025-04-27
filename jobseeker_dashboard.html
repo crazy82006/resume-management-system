@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Seeker Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='jobseeker_dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='image/logo.png') }}" alt="Spidy Web Logo" class="logo-img">
+            <h1 class="logo-text">Spidy Web</h1>
+        </div>
+        <div class="profile-section">
+            <img src="{{ url_for('static', filename='image/default_profile.png') }}" alt="Profile Icon" class="profile-icon">
+            <span class="username">{{ username }}</span>
+            <a href="#" class="edit-profile">Edit Profile</a>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="welcome-box fade-in">
+            <h2>Welcome, {{ username }}!</h2>
+            <p>Start building your future today.</p>
+
+            {% if resume_data %}
+            <!-- Button to show Resume details -->
+            <div class="resume-action">
+                <button class="view-resume-btn" onclick="toggleResumeOption()">View My Resume</button>
+            </div>
+
+            <!-- Resume Option (Initially Hidden) -->
+            <div id="resume-option" style="display: none;">
+                <div class="resume-box">
+                    <!-- Resume Image -->
+                    <img src="{{ url_for('view_resume_image', filename=resume_data['resume_url']) }}" alt="Resume Image" class="resume-image">
+                    
+                    <!-- Resume Details -->
+                    <div class="resume-details">
+                        <h3>Resume Details:</h3>
+                        <p><strong>10th Grade Marks:</strong> {{ resume_data['marks_10'] }}</p>
+                        <p><strong>12th Grade Marks:</strong> {{ resume_data['marks_12'] }}</p>
+                        <p><strong>Experience:</strong> {{ resume_data['experience'] }}</p>
+                        <p><strong>Projects:</strong> {{ resume_data['projects'] }}</p>
+                        <p><strong>Skills:</strong> {{ resume_data['skills'] }}</p>
+                    </div>
+
+                    <!-- Button to View Full Resume -->
+                    <a href="{{ url_for('view_resume', filename=resume_data['resume_url']) }}" target="_blank" class="view-resume">Click to View Full Resume</a>
+                </div>
+            </div>
+            {% else %}
+                <a href="{{ url_for('resume_form') }}" class="resume-btn">Create Your Resume</a>
+            {% endif %}
+        </div>
+    </main>
+
+    <script>
+        function toggleResumeOption() {
+            const resumeOption = document.getElementById('resume-option');
+            resumeOption.style.display = resumeOption.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

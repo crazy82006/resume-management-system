@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Your Resume - Spidy Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Submit Your Resume</h2>
+    <form action="/submit_resume" method="POST" enctype="multipart/form-data">
+        <h3>10th Grade</h3>
+        <input type="text" name="school_10" placeholder="School Name" required>
+        <input type="text" name="board_10" placeholder="Board" required>
+        <input type="text" name="marks_10" placeholder="Marks (%)" required>
+
+        <h3>12th Grade</h3>
+        <input type="text" name="school_12" placeholder="School Name" required>
+        <input type="text" name="board_12" placeholder="Board" required>
+        <input type="text" name="marks_12" placeholder="Marks (%)" required>
+
+        <h3>Experience</h3>
+        <textarea name="experience" placeholder="Work experience or internships"></textarea>
+
+        <h3>Projects</h3>
+        <textarea name="projects" placeholder="Mention your projects here"></textarea>
+
+        <h3>Skills</h3>
+        <input type="text" name="skills" placeholder="e.g., Python, HTML, MongoDB">
+
+        <h3>Resume Image</h3>
+        <label for="resume_image">Upload your resume (PNG, JPG, JPEG):</label>
+        <input type="file" name="resume_image" id="resume_image" accept=".png, .jpg, .jpeg" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

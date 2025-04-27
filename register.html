@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Spidy Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      background: linear-gradient(to right, #001f3f, #0074D9);
+    }
+
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(to bottom right, #003366, #005599);
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left-panel img {
+      max-width: 100%;
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .left-panel h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .left-panel p {
+      font-size: 14px;
+      text-align: center;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: auto;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    .right-panel {
+      flex: 1;
+      background: white;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .tabs a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      border-radius: 10px 10px 0 0;
+      background-color: #f0f0f0;
+      margin-left: 10px;
+    }
+
+    .tabs a.active {
+      background-color: #00aaff;
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    form label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      color: #333;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group input {
+      margin-right: 10px;
+    }
+
+    .checkbox-group a {
+      color: #0074D9;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #008ecc;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+      }
+
+      .right-panel {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .tabs {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <div class="left-panel">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Welcome Graphic">
+      <h2>Welcome Page</h2>
+      <p>Join the Spidy Web and let's get tangled in opportunities! 🕷️🕸️</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="tabs">
+        <a href="/login">Sign In</a>
+        <a class="active" href="#">Register</a>
+      </div>
+
+      <h1>Register</h1>
+      <form method="POST" action="/register">
+        <label for="name">FULL NAME</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" placeholder="********" required>
+
+        <label for="role">I AM A</label>
+        <select id="role" name="role" required>
+          <option value="">-- Select Role --</option>
+          <option value="jobseeker">Job Seeker</option>
+          <option value="employer">Employer</option>
+        </select>
+
+        <div class="checkbox-group">
+          <input type="checkbox" required>
+          <label>I agree all the statements in <a href="#">Terms of service</a></label>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spidy Web</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://images.hdqwalls.com/wallpapers/spiderman-into-the-spider-verse-cool-art-6a.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f8f8f8;
+            letter-spacing: 1px;
+        }
+
+        .navbar .links a {
+            margin-left: 20px;
+            color: #f8f8f8;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .links a:hover {
+            background-color: #6a5acd;
+        }
+
+        .main {
+            height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .content-box {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .content-box h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .content-box p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .tagline {
+            margin-top: 25px;
+            font-style: italic;
+            font-size: 20px;
+            color: #fffacd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">🕸 Spidy Web</div>
+        <div class="links">
+            {% if username %}
+                <span style="margin-right: 20px;">Welcome, {{ username }}!</span>
+                <a href="/resume">Resume</a>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="content-box">
+            <h1>Welcome to Spidy Web</h1>
+            <p>
+                Spidy Web is a centralized Resume Management System designed to empower <strong>Job Seekers</strong> and <strong>Employers</strong> alike.
+                Whether you're a student showcasing your talents, or a company searching for skilled individuals — Spidy Web connects everyone into a single network,
+                just like a spider builds its web with purpose and precision.
+            </p>
+            <p>
+                With smart project listings, skill-based search, and clean profile tracking — we help people be seen for who they are and what they build.
+            </p>
+            <div class="tagline">
+                “Every skill deserves a spotlight. Spidy Web makes sure it shines.”
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
